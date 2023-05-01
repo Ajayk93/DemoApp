@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DataAccess.CodeFirst.Employee>
+
+<div>
+    <h2>Student List</h2>
+    <div>
+        @Html.ActionLink("Add New", "Add")
+    </div>
+    <div>@TempData["Saved"]</div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Employee Name
+            </th>
+            <th>
+                Employee Age
+            </th>
+            <th>
+                Date Of Joining
+            </th>
+            <th>
+                Salary
+            </th>
+            <th>
+                Department
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Age)</td>
+            <td>@Html.DisplayFor(modelItem => item.DOJ)</td>
+            <td>@Html.DisplayFor(modelItem => item.Salary)</td>
+            <td>@Html.DisplayFor(modelItem => item.Department)</td>
+        </tr>
+        }
+    </tbody>
+</table>

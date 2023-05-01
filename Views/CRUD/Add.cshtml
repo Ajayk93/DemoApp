@@ -1,0 +1,39 @@
+﻿@model DataAccess.CodeFirst.Employee
+
+<h2>Add New Student</h2>
+@Html.ActionLink("Go back to Index", "Index")
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary(true)
+
+    <div class="form-section">
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name)
+            @Html.TextBoxFor(x => x.Name, "", new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Age)
+            @Html.TextBoxFor(x => x.Age, "", new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.DOJ)
+            @Html.TextBoxFor(x => x.DOJ, "", new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Salary)
+            @Html.TextBoxFor(x => x.Salary, "", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Department)
+            @Html.TextBoxFor(x => x.Department, "", new { @class = "form-control" })
+        </div>
+        <input type="submit" class="btn btn-success" />
+    </div>
+}
+
+
